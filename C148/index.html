@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+</head>
+
+<body>
+    <a-scene background = "color: white">
+        <a-camera position = "0 8 15"></a-camera>
+        
+        <!-- assets management-->
+        <a-asset timeout = "10000">
+            <a-asset-item id = "tiger" src = "white_tiger_rigged_animated/scene.gltf"></a-asset-item>
+        </a-asset>
+
+        <a-sky src = "http://weknowyourdreams.com/images/sky/sky-07.jpg"></a-sky>
+
+        <!-- light in the scenes -->
+        <!-- ambient light -->
+        <a-entity light = "type: ambient; intensity: 0.5"></a-entity>
+        <a-entity>
+
+            <!-- gltf model -->
+            <a-entity position = "-5 2 0" rotation = "0 60 0" scale = "0.05 0.05 0.05" gltf-model = "#tiger" shadow = "cast: true;"></a-entity>
+        </a-entity>
+        
+    </a-scene>
+</body>
+</html>
